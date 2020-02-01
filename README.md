@@ -1,0 +1,1 @@
+# ggjbx2020_blinds
