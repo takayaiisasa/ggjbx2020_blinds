@@ -8,8 +8,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     AudioClip[] audioClip;
 
-    public static bool clearFlag = false;
-
     public static SoundManager Instance
     {
         get { return instance; }
@@ -41,10 +39,6 @@ public class SoundManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (clearFlag)
-        {
-
-        }
+    { 
     }
 }
