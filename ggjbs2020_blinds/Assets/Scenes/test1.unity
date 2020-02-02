@@ -623,7 +623,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ee98c068bf62e1045979ba88235ef7ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 43d04f216224d954bbdc34d16127bbc7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -719,7 +719,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7231a4b1ab55f584787a78bcdada52be, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 51fc7552a5facc74e8b3ed571c93a592, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -815,7 +815,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7538a0d0ca78b5a468f8fd32444a3251, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3feef12e076d3b340bc90c0508865c1c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1781,7 +1781,6 @@ GameObject:
   - component: {fileID: 1016435855}
   - component: {fileID: 1016435854}
   - component: {fileID: 1016435853}
-  - component: {fileID: 1016435852}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1789,19 +1788,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1016435852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016435851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ea8869e818036c4a87889f9ea754d2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clearText: 
 --- !u!114 &1016435853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2457,6 +2443,7 @@ GameObject:
   - component: {fileID: 1460005279}
   - component: {fileID: 1460005278}
   - component: {fileID: 1460005277}
+  - component: {fileID: 1460005283}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2583,6 +2570,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1460005283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460005276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea8869e818036c4a87889f9ea754d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearText: 
 --- !u!1 &1470936974
 GameObject:
   m_ObjectHideFlags: 0
