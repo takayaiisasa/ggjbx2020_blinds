@@ -8,10 +8,16 @@ public class Door : MonoBehaviour
     float value = 0;
     public static bool doorStart = false;
 
+    AudioSource audioSource;
+    public AudioClip audioClip;
+    int a = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        a = 0;
     }
 
     // Update is called once per frame
@@ -19,6 +25,7 @@ public class Door : MonoBehaviour
     {
         if (doorStart)
         {
+            a++;
             if (transform.rotation.y >= -0.7f)
             {
                 value -= 0.3f * Time.deltaTime;
@@ -28,6 +35,10 @@ public class Door : MonoBehaviour
             {
                 Player.start = true;
             }
+        }
+        if (a==1)
+        {
+            audioSource.PlayOneShot(audioClip);
         }
     }
 }

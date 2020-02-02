@@ -10,7 +10,10 @@ public class Clear : MonoBehaviour
     float alfa;
     float red, green, blue;
     bool clearflag;
+    bool hitpipeflag;
     // Start is called before the first frame update
+    public HitPipe hitpipe;
+    AudioSource audioSource;
     void Start()
     {
         //  this.text = this.GetComponent<Text>();
@@ -19,16 +22,20 @@ public class Clear : MonoBehaviour
         green = this.GetComponent<Text>().color.g;
         blue = this.GetComponent<Text>().color.b;
         alfa = this.GetComponent<Text>().color.a;
-        clearflag = true;
+        clearflag = false;
+        hitpipeflag = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (clearflag == true)
+        //hitpipe.clearflag;
+        if (hitpipe.clearflag == true)
         {
             GetComponent<Text>().color = new Color(red, green, blue, alfa);
             alfa += speed;
+            audioSource.Play();
         }
         text.color = new Color(red, green, blue, alfa);
     }
