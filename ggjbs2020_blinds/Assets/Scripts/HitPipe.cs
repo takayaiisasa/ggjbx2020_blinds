@@ -8,7 +8,7 @@ public class HitPipe : MonoBehaviour
     private AudioSource PipeNear;
     private AudioSource PipeFar;
     private bool TrrigerFlag;
-    private float Timmer;
+    private float Timer;
 
     void Start()
     {
@@ -17,13 +17,13 @@ public class HitPipe : MonoBehaviour
         PipeNear = audioSources[1];
         PipeFar = audioSources[2];
         TrrigerFlag = false;
-        Timmer = 0;
+        Timer = 0;
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (TrrigerFlag == true && timer >= 2)
+        Timer += Time.deltaTime;
+        if (TrrigerFlag == true && Timer >= 2)
         {
             TrrigerFlag = false;
         }
@@ -36,21 +36,21 @@ public class HitPipe : MonoBehaviour
             case "goal":
                 {
                     CatchPipe.PlayOneShot(CatchPipe.clip);
-                    TriggerFlag = true;
+                    TrrigerFlag = true;
                     Timer = 0;
                     break;
                 }
             case "close":
                 {
                     PipeNear.PlayOneShot(PipeNear.clip);
-                    TriggerFlag = true;
+                    TrrigerFlag = true;
                     Timer = 0;
                     break;
                 }
             case "far":
                 {
                     PipeFar.PlayOneShot(PipeFar.clip);
-                    TriggerFlag = true;
+                    TrrigerFlag = true;
                     Timer = 0;
                     break;
                 }
