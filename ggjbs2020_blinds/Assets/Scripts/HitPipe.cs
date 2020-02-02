@@ -9,6 +9,9 @@ public class HitPipe : MonoBehaviour
     private AudioSource PipeFar;
     private bool TrrigerFlag;
     private float Timer;
+    int count;
+    public GameObject goal;
+    public bool clearflag;
 
     void Start()
     {
@@ -18,12 +21,13 @@ public class HitPipe : MonoBehaviour
         PipeFar = audioSources[2];
         TrrigerFlag = false;
         Timer = 0;
+        clearflag = false;
     }
 
     void Update()
     {
         Timer += Time.deltaTime;
-        if (TrrigerFlag == true && Timer >= 2)
+        if (TrrigerFlag == true && Timer >= 1)
         {
             TrrigerFlag = false;
         }
@@ -31,29 +35,42 @@ public class HitPipe : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag)  // ぶつかったオブジェクトのタグで分岐
+        if(TrrigerFlag == false)
         {
-            case "goal":
-                {
-                    CatchPipe.PlayOneShot(CatchPipe.clip);
-                    TrrigerFlag = true;
-                    Timer = 0;
-                    break;
-                }
-            case "close":
-                {
-                    PipeNear.PlayOneShot(PipeNear.clip);
-                    TrrigerFlag = true;
-                    Timer = 0;
-                    break;
-                }
-            case "far":
-                {
-                    PipeFar.PlayOneShot(PipeFar.clip);
-                    TrrigerFlag = true;
-                    Timer = 0;
-                    break;
-                }
+
+            switch (other.gameObject.tag)  // ぶつかったオブジェクトのタグで分岐
+            {
+                case "goal":
+                    {
+                        CatchPipe.PlayOneShot(CatchPipe.clip);
+                        TrrigerFlag = true;
+                        Timer = 0;
+                        if (count >= 1)
+                        {
+                            count--;
+                        }
+                        else if (count == 0)
+                        {
+                            Destroy(goal);
+                            clearflag = true;
+                        }
+                        break;
+                    }
+                case "close":
+                    {
+                        PipeNear.PlayOneShot(PipeNear.clip);
+                        TrrigerFlag = true;
+                        Timer = 0;
+                        break;
+                    }
+                case "far":
+                    {
+                        PipeFar.PlayOneShot(PipeFar.clip);
+                        TrrigerFlag = true;
+                        Timer = 0;
+                        break;
+                    }
+            }
         }
     }
 }
